@@ -1,0 +1,30 @@
+<application>
+    <name>Tutorial_Yarpmanager</name>
+
+    <description>A simple Yarp application</description>
+    <version>1.0</version>
+    
+    <authors>
+        <author email="ali.paikan@iit.it">Ali Paikan</author>
+    </authors>
+
+    <module>
+        <name>yarpview</name>
+        <parameters>--x 100</parameters>
+        <node>localhost</node>
+    </module>
+
+    <module>
+        <name>yarpdev</name>
+        <parameters>--device fakeFrameGrabber --mode line </parameters>
+        <node>localhost</node>
+     </module>
+
+    <connection>
+        <from>/grabber</from>
+        <to>/yarpview/img:i</to>
+        <protocol>udp</protocol>
+    </connection>
+
+</application>
+
